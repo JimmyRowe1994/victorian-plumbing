@@ -1,0 +1,25 @@
+.component {
+    background: white;
+}
+
+.image {
+    width: 100%;
+}
+
+.name {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.price {
+    color: rgb(233, 59, 59);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.textWrapper {
+    padding: 0px var(--s-4);
+}

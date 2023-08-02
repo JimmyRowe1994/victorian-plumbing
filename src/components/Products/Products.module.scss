@@ -1,0 +1,18 @@
+.productCards {
+    display: grid;
+    gap: var(--s-4);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.sortByWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
