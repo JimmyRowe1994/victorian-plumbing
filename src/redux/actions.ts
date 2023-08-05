@@ -27,9 +27,23 @@ export const setPagination = (payload: Pagination) => async (dispatch: Dispatch)
     })
 }
 
+export const setPaginationNumber = (payload: number) => async (dispatch: Dispatch) => {
+    dispatch({
+        type: types.SET_PAGINATION_NUMBER,
+        payload,
+    })
+}
+
 export const setProducts = (payload: Array<object>) => async (dispatch: Dispatch) => {
     dispatch({
         type: types.SET_PRODUCTS,
+        payload,
+    })
+}
+
+export const setProductView = (payload: 'grid' | 'list') => async (dispatch: Dispatch) => {
+    dispatch({
+        type: types.SET_PRODUCT_VIEW,
         payload,
     })
 }
@@ -43,6 +57,12 @@ export const setSelectedFilters = (payload: any) => async (dispatch: Dispatch, g
     dispatch({
         type: types.SET_SELECTED_FILTERS,
         payload: adjustedSelectedFilters,
+    })
+
+    // Reset the pagination in case the current pagination is beyond the new results total
+    dispatch({
+        type: types.SET_PAGINATION_NUMBER,
+        payload: 1,
     })
 };
 

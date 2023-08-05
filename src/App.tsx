@@ -7,15 +7,13 @@ import styles from "./App.module.scss";
 import { callAPI } from "./helpers/callAPI";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import { setFacets, setPagination, setProducts } from "./redux/actions";
-import { FilterOption } from "./types";
-
-// TO DO MOVE INTO A FILE SO IT CAN BE CALLED IN MULITPLE PLACES
-interface SelectedFilters {
-  [key: string]: Array<FilterOption>;
-}
+import { FilterOption, SelectedFilters } from "./types";
 
 const App = () => {
   const category = useAppSelector((state) => state.data.category);
+  const paginationNumber = useAppSelector(
+    (state) => state.data.paginationNumber
+  );
   const selectedFilters = useAppSelector<SelectedFilters>(
     (state) => state.data.selectedFilters
   );
@@ -34,7 +32,7 @@ const App = () => {
           path: "https://spanishinquisition.victorianplumbing.co.uk/interviews/listings?apikey=yj2bV48J40KsBpIMLvrZZ1j1KwxN4u3A83H8IBvI",
           payload: {
             additionalPages: 0,
-            pageNumber: 0,
+            pageNumber: paginationNumber,
             query: category,
             size: 30,
             sort: sortType,
@@ -55,13 +53,15 @@ const App = () => {
     return () => {
       controller.abort();
     };
-  }, [dispatch, selectedFilters, category, sortType]);
+  }, [dispatch, paginationNumber, selectedFilters, category, sortType]);
 
   return (
     <div className={styles.component}>
-      <h1 className={styles.title}>Victorian Plumbing</h1>
+      <h1 className={styles.title}>Victorian Plumbing</h1>4 images here for the
+      different categories - basins, baths, showers, toilets,
       <div className={styles.contentWrapper}>
         <Filters />
+        <Products />
       </div>
       {/* <Products />
       <Categories /> */}

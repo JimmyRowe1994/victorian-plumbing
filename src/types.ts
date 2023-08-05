@@ -11,11 +11,30 @@ export interface FilterOption {
     value: number | object | string;
 }
 
+export interface Image {
+    attributes: {
+      imageAltText: string;
+    };
+    url: string;
+}
+
 export interface Pagination {
     from: number;
     size: number;
     sortType: 1 | 2 | 3 | 4;
     total: number;
+}
+
+export interface Price {
+    isOnPromotion?: boolean;
+    priceIncTax: number;
+}
+  
+export interface Product {
+    id: string;
+    image: Image;
+    price: Price;
+    productName: string;
 }
 
 export interface SelectedFilters {

@@ -1,0 +1,46 @@
+.component {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: 700px)  {
+        align-items: center;
+        flex-direction: row;
+    }
+}
+
+.sortType {
+    border-radius: var(--s-1);
+    cursor: pointer;
+    font-family: inherit;
+    margin: 0 var(--s-5) 0 var(--s-3);
+    padding: var(--s-2) var(--s-4);
+}
+
+.sortTypeWrapper {
+    margin-bottom: var(--s-2);
+    
+    @media only screen and (min-width: 700px)  {
+        margin: 0;
+    }
+}
+
+.viewButton {
+    background: white;
+    border: solid 1px black;
+    border-radius: var(--s-1);
+    color: black;
+    cursor: pointer;
+    font-family: inherit;
+    padding: var(--s-2) var(--s-4);
+
+    &:not(:last-of-type) {
+        margin-right: var(--s-2);
+    }
+}
+
+.activeViewButton {
+    background: #32AA3C;
+    color: white;
+    font-weight: 500;
+}

@@ -6,9 +6,17 @@
     width: 100%;
 }
 
+.listView {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .name {
+    color: black;
     display: -webkit-box;
+    margin-bottom: var(--s-3);
     overflow: hidden;
+    text-decoration: none;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -18,8 +26,9 @@
     color: rgb(233, 59, 59);
     font-size: 18px;
     font-weight: 600;
+    margin: 0;
 }
 
 .textWrapper {
-    padding: 0px var(--s-4);
+    padding: var(--s-2) var(--s-4) var(--s-4);
 }

@@ -19,6 +19,7 @@ const AppliedFilters = (): ReactElement | null => {
           const handleClick = () => {
             const updatedSelectedFilters = [...selectedFilters[key]];
             updatedSelectedFilters.splice(index, 1);
+
             dispatch(
               setSelectedFilters({
                 ...selectedFilters,
@@ -44,7 +45,7 @@ const AppliedFilters = (): ReactElement | null => {
           );
         })
       ),
-    [selectedFilters]
+    [dispatch, selectedFilters]
   );
 
   if (Object.keys(selectedFilters).length === 0) {

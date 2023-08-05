@@ -7,7 +7,9 @@ interface InitialState {
     category: string;
     facets: Array<Facet>;
     pagination: Pagination;
+    paginationNumber: number;
     products: Array<object>;
+    productView: 'grid' | 'list';
     selectedFilters: SelectedFilters;
     sortType: 1 | 2 | 3 | 4;
 }
@@ -21,7 +23,9 @@ const initialState: InitialState = {
         sortType: 1,
         total: 0,
     },
+    paginationNumber: 1,
     products: [],
+    productView: 'grid',
     selectedFilters: {},
     sortType: 1,
 }
@@ -46,6 +50,18 @@ export const reducer = (state: InitialState = initialState, action: AnyAction) =
             return {
                 ...state,
                 pagination: payload,
+            }
+        }
+        case types.SET_PAGINATION_NUMBER: {
+            return {
+                ...state,
+                paginationNumber: payload,
+            }
+        }
+        case types.SET_PRODUCT_VIEW: {
+            return {
+                ...state,
+                productView: payload,
             }
         }
         case types.SET_PRODUCTS: {
