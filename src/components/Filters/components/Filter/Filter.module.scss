@@ -1,3 +1,38 @@
-.filterOption {
-    list-style-type: none;
+.component {
+    background: white;
+    box-sizing: border-box;
+    // padding: var(--s-4);
+    width: 100%;
+
+    &:not(:last-of-type) {
+        margin-bottom: var(--s-4);
+    }
+}
+
+.heading {
+    margin: 0;
+}
+
+.title {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    margin: 0;
+    padding: var(--s-4);
+    width: 100%;
+}
+
+.options {
+    margin: 0;
+    max-height: 1000px;
+    overflow: hidden;
+    padding: 0 var(--s-4) var(--s-4) var(--s-4);
+    transition: all 0.3s ease-in-out;
+}
+
+.optionsClosed {
+    margin: 0;
+    max-height: 0;
+    padding: 0;
 }

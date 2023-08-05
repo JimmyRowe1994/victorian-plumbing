@@ -2,9 +2,10 @@ interface Options {
     method: 'DELETE' | 'GET' | 'POST' | 'PUT' | 'UPDATE'
     path: string;
     payload?: object;
+    signal?: AbortSignal;
 }
 
-export const callAPI = async ({ method = 'GET', path, payload }: Options) => {
+export const callAPI = async ({ method = 'GET', path, payload, signal }: Options) => {
     const response = await fetch(
         path,
         {
@@ -13,6 +14,7 @@ export const callAPI = async ({ method = 'GET', path, payload }: Options) => {
                 "Content-Type": "application/json; charset=utf-8",
             },
             method,
+            signal
         }
       );
 

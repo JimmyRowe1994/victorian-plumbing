@@ -1,13 +1,18 @@
 .component {
-    display: grid;
-    gap: var(--s-4);
-    grid-template-columns: 1fr;
-    height: 100vh;
-    margin: auto;
-    max-width: 1200px;
-    width: 100%;
+    // Empty ? ...
+}
 
-    @media only screen and (min-width: 900px) {     
-        grid-template-columns: 1fr 3fr 1fr;
-    }
+.contentWrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 0 auto var(--s-8) auto;
+    max-width: 1440px;
+}
+
+.title {
+    background: #32AA3C;
+    color: white;
+    margin: 0px 0px var(--s-8) 0px;
+    padding: var(--s-6);
+    text-align: center;
 }

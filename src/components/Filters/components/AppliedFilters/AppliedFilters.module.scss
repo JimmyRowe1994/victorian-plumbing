@@ -1,0 +1,35 @@
+.component {
+    background: white;
+    margin-bottom: var(--s-4);
+    padding: var(--s-4);
+}
+
+.appliedFilters {
+    margin: 0;
+    padding: 0;
+}
+
+.deleteButton {
+    background: rgb(247, 58, 58);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    margin-right: var(--s-2);
+    padding: var(--s-1) var(--s-2);   
+}
+
+.listItem {
+    align-items: center;
+    display: flex;
+    list-style-type: none;
+    
+    &:not(:last-of-type) {
+        margin-bottom: var(--s-1);
+    }
+}
+
+.title {
+    margin: 0 0 var(--s-4) 0;
+    text-align: center;
+}

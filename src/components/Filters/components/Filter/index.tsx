@@ -1,48 +1,75 @@
-import React, { ReactElement, useMemo } from "react";
-import { FilterData, FilterOption, SelectedFilters } from "../../types";
+import React, { useCallback, useMemo, useState } from "react";
 
 import styles from "./Filter.module.scss";
+import { Facet, FilterOption } from "../../../../types";
+import Option from "./components/Option";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
+import { setSelectedFilters } from "../../../../redux/actions";
+import { SelectedFilters } from "../../../../types";
+import clsx from "clsx";
 
-interface Props extends FilterData {
-  onChange: (filterOption: FilterOption) => void;
-  selectedFilters: SelectedFilters;
-}
+const Filter = ({ displayName, identifier, options }: Facet) => {
+  const [isOpen, setIsOpen] = useState(true);
+  const selectedFilters = useAppSelector<SelectedFilters>(
+    (state) => state.data.selectedFilters
+  );
 
-const Filter = ({
-  displayName,
-  identifier,
-  onChange,
-  options,
-  selectedFilters,
-}: Props): ReactElement => {
+  const dispatch = useAppDispatch();
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   const filterOptions = useMemo(
     () =>
-      options.map((option: FilterOption) => {
-        const isChecked = !!selectedFilters[identifier]?.find(
-          (filter: Partial<FilterOption>) =>
-            filter.identifier === option.identifier
+      options.map((option) => {
+        const index = selectedFilters[identifier]?.findIndex(
+          (selectedFilter) => selectedFilter.identifier === option.identifier
         );
 
+        const handleChange = (filterOption: FilterOption) => {
+          const selectedFilterOptions = [
+            ...(selectedFilters[identifier] ?? []),
+          ];
+
+          if (index >= 0) {
+            selectedFilterOptions.splice(index, 1);
+          } else {
+            selectedFilterOptions.push(filterOption);
+          }
+
+          dispatch(
+            setSelectedFilters({
+              ...selectedFilters,
+              [identifier]: selectedFilterOptions,
+            })
+          );
+        };
+
         return (
-          <li className={styles.filterOption}>
-            <label>
-              <input
-                type="checkbox"
-                checked={isChecked}
-                onChange={() => onChange(option)}
-              />
-              {option.displayValue}
-            </label>
-          </li>
+          <Option
+            key={option.identifier}
+            isChecked={index >= 0}
+            onChange={handleChange}
+            {...option}
+          />
         );
       }),
-    [identifier, onChange, options, selectedFilters]
+    [dispatch, identifier, options, selectedFilters]
   );
 
   return (
-    <div>
-      <h3>{displayName}</h3>
-      <ul>{filterOptions}</ul>
+    <div className={styles.component}>
+      <button className={styles.title} onClick={handleClick}>
+        <h3 className={styles.heading}>{displayName}</h3>
+      </button>
+      <ul
+        className={clsx(styles.options, {
+          [styles.optionsClosed]: !isOpen,
+        })}
+      >
+        {filterOptions}
+      </ul>
     </div>
   );
 };

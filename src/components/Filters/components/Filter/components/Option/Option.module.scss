@@ -1,0 +1,16 @@
+.component {
+    list-style-type: none;
+}
+
+.input {
+    margin: 0 var(--s-2) 0 0;
+}
+
+.label {
+    cursor: pointer;
+}
+
+.productCount {
+    color: rgb(129, 129, 129);
+    margin-left: var(--s-2);
+}
