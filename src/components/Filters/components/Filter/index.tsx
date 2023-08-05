@@ -9,7 +9,7 @@ import { SelectedFilters } from "../../../../types";
 import clsx from "clsx";
 
 const Filter = ({ displayName, identifier, options }: Facet) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(window.innerWidth > 900);
   const selectedFilters = useAppSelector<SelectedFilters>(
     (state) => state.data.selectedFilters
   );

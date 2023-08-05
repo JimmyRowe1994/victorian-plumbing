@@ -34,7 +34,7 @@ const PaginationAndResults = (): ReactElement => {
           disabled={paginationNumber === 1}
           onClick={() => handleClick("previous")}
         >
-          {"<"}
+          ←
         </button>
         <button
           aria-label="Go to next page"
@@ -42,7 +42,7 @@ const PaginationAndResults = (): ReactElement => {
           disabled={paginationFrom + paginationSize === paginationTotal}
           onClick={() => handleClick("next")}
         >
-          {">"}
+          →
         </button>
       </div>
       <p className={styles.totalResults}>{totalResults} results</p>

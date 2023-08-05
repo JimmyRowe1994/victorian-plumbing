@@ -11,10 +11,23 @@
     }
 }
 
+.button {
+    background: white;
+    border: dashed 1px black;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    padding: var(--s-2) var(--s-4);
+}
+
 .title {
     background: #32AA3C;
     color: white;
-    margin: 0px 0px var(--s-8) 0px;
+    margin: 0px 0px var(--s-4) 0px;
     padding: var(--s-6);
     text-align: center;
+
+    @media only screen and (min-width: 900px)  {
+        margin: 0px 0px var(--s-8) 0px;
+    }
 }

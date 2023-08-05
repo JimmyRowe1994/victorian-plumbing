@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import Categories from "./components/Categories";
 import Filters from "./components/Filters";
@@ -57,14 +57,12 @@ const App = () => {
 
   return (
     <div className={styles.component}>
-      <h1 className={styles.title}>Victorian Plumbing</h1>4 images here for the
-      different categories - basins, baths, showers, toilets,
+      <h1 className={styles.title}>Victorian Plumbing</h1>
       <div className={styles.contentWrapper}>
+        <Categories />
         <Filters />
         <Products />
       </div>
-      {/* <Products />
-      <Categories /> */}
     </div>
   );
 };

@@ -1,8 +1,4 @@
 .component {
-    overflow-y: scroll;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

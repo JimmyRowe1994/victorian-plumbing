@@ -16,6 +16,10 @@
 
 .listView {
     grid-template-columns: 1fr;
+
+    @media only screen and (min-width: 700px)  {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .noProductsMessage {

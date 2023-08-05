@@ -1,6 +1,7 @@
 :root {
     background: #ededed;
     font-family: 'Sora', sans-serif;
+    position: relative;
 
     // Spacing
     --s-1: 0.25rem;
@@ -15,6 +16,10 @@
 
 body {
     margin: 0;
+}
+
+h2 {
+    font-size: 1.4rem;
 }
 
 h3 {
