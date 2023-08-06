@@ -1,5 +1,17 @@
 .component {
     background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.bestSeller {
+    background:rgb(233, 59, 59);
+    box-sizing: border-box;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: var(--s-3);
+    padding: var(--s-2) var(--s-4);
 }
 
 .image {
@@ -30,5 +42,9 @@
 }
 
 .textWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
     padding: var(--s-2) var(--s-4) var(--s-4);
 }

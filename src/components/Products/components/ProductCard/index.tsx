@@ -2,10 +2,13 @@ import clsx from "clsx";
 import React, { ReactElement } from "react";
 import { useAppSelector } from "../../../../hooks/redux";
 import { Product } from "../../../../types";
+import AverageRating from "./AverageRating";
 
 import styles from "./ProductCard.module.scss";
 
 const ProductCard = ({
+  attributes,
+  averageRating,
   id,
   image,
   price,
@@ -30,10 +33,20 @@ const ProductCard = ({
         src={image.url}
       />
       <div className={styles.textWrapper}>
-        <a className={styles.name} href="/" onClick={handleClick}>
-          {productName}
-        </a>
-        <p className={styles.price}>£{price.priceIncTax}</p>
+        <div>
+          <a className={styles.name} href="/" onClick={handleClick}>
+            {productName}
+          </a>
+          <p className={styles.price}>£{price.priceIncTax}</p>
+        </div>
+        <div>
+          {attributes.isBestSeller && (
+            <p className={styles.bestSeller}>Best Seller</p>
+          )}
+          {averageRating ? (
+            <AverageRating averageRating={averageRating} />
+          ) : null}
+        </div>
       </div>
     </div>
   );

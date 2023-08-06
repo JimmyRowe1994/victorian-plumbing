@@ -31,6 +31,10 @@ export interface Price {
 }
   
 export interface Product {
+    attributes: {
+        isBestSeller?: string
+    };
+    averageRating?: number;
     id: string;
     image: Image;
     price: Price;
