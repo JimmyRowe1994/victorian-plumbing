@@ -26,6 +26,13 @@
     padding: var(--s-2) var(--s-4);
 }
 
+.openFiltersButton {
+    background: white;
+    border: dashed 1px black;
+    font-family: inherit;
+    padding: var(--s-2) var(--s-4);
+}
+
 .title {
     background: #32AA3C;
     color: white;

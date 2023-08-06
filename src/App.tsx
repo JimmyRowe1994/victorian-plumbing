@@ -8,8 +8,11 @@ import { callAPI } from "./helpers/callAPI";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import { setFacets, setPagination, setProducts } from "./redux/actions";
 import { FilterOption, SelectedFilters } from "./types";
+import Modal from "./components/Modal";
 
 const App = () => {
+  const [filterModalIsOpen, setFilterModalIsOpen] = useState(false);
+
   const category = useAppSelector((state) => state.data.category);
   const paginationNumber = useAppSelector(
     (state) => state.data.paginationNumber
@@ -20,6 +23,8 @@ const App = () => {
   const sortType = useAppSelector((state) => state.data.sortType);
 
   const dispatch = useAppDispatch();
+
+  const isSmallScreen = window.innerWidth < 900;
 
   useEffect(() => {
     const controller = new AbortController();
@@ -60,9 +65,28 @@ const App = () => {
       <h1 className={styles.title}>Victorian Plumbing</h1>
       <div className={styles.contentWrapper}>
         <Categories />
-        <Filters />
+        {isSmallScreen ? (
+          <button
+            className={styles.openFiltersButton}
+            onClick={() => setFilterModalIsOpen(true)}
+          >
+            Open filters
+          </button>
+        ) : (
+          <Filters />
+        )}
         <Products />
       </div>
+      {isSmallScreen && (
+        <Modal
+          dialogTitle="Filters"
+          dialogDescription="Select options to filter products"
+          isOpen={filterModalIsOpen}
+          onClose={() => setFilterModalIsOpen(false)}
+        >
+          <Filters />
+        </Modal>
+      )}
     </div>
   );
 };

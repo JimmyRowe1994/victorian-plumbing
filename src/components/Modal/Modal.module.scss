@@ -1,0 +1,27 @@
+.component {
+    width: 100%;
+
+    @media only screen and (min-width: 900px)  {
+        min-width: 420px;
+        width: auto;
+    }
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: rgb(161, 161, 161);
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.closeButtonWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dialogDescription, .dialogTitle {
+    display: none;
+}
