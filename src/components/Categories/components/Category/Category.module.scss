@@ -3,6 +3,7 @@
     border: none;
     cursor: pointer;
     filter: grayscale(1);
+    padding: 0;
     position: relative;
     width: 100%;
 }
@@ -22,10 +23,10 @@
     color: white;
     display: flex;
     font-family: 'Sora', sans-serif;
-    height: 32px;
+    height: var(--s-8);
     justify-content: center;
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
-    width: 95%;
+    width: 100%;
 }

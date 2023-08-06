@@ -1,10 +1,5 @@
 .component {
-    overflow-y: scroll;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    grid-area: filters;
 }
 
 .title {
