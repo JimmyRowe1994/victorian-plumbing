@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useRef } from "react";
+import React, { HTMLAttributes, ReactElement, useRef } from "react";
 
 import styles from "./Modal.module.scss";
 
@@ -16,7 +16,7 @@ const Modal = ({
   onClose,
   dialogTitle,
   ...rest
-}: Props) => {
+}: Props): ReactElement => {
   const ref = useRef<HTMLDialogElement>(null);
 
   const focusableElements = ref?.current?.querySelectorAll(

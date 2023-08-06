@@ -1,9 +1,9 @@
 import React, { ReactElement, useCallback, useMemo } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
-import { setSelectedFilters } from "../../../../redux/actions";
-import { SelectedFilters } from "../../../../types";
 
 import styles from "./AppliedFilters.module.scss";
+import { SelectedFilters } from "../../../../types";
+import { setSelectedFilters } from "../../../../redux/actions";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 
 const AppliedFilters = (): ReactElement | null => {
   const selectedFilters = useAppSelector<SelectedFilters>(

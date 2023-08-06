@@ -1,14 +1,14 @@
-import React, { useCallback, useMemo, useState } from "react";
-
-import styles from "./Filter.module.scss";
-import { Facet, FilterOption } from "../../../../types";
-import Option from "./components/Option";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
-import { setSelectedFilters } from "../../../../redux/actions";
-import { SelectedFilters } from "../../../../types";
+import React, { ReactElement, useCallback, useMemo, useState } from "react";
 import clsx from "clsx";
 
-const Filter = ({ displayName, identifier, options }: Facet) => {
+import Option from "./components/Option";
+import styles from "./Filter.module.scss";
+import { Facet, FilterOption } from "../../../../types";
+import { SelectedFilters } from "../../../../types";
+import { setSelectedFilters } from "../../../../redux/actions";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
+
+const Filter = ({ displayName, identifier, options }: Facet): ReactElement => {
   const [isOpen, setIsOpen] = useState(window.innerWidth > 900);
   const selectedFilters = useAppSelector<SelectedFilters>(
     (state) => state.data.selectedFilters

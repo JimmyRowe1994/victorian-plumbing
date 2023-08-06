@@ -1,7 +1,7 @@
 import React, { ReactElement, useMemo } from "react";
 
-import styles from "./Categories.module.scss";
 import Category from "./components/Category";
+import styles from "./Categories.module.scss";
 
 const Categories = (): ReactElement => {
   const categoryLinks = useMemo(

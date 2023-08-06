@@ -1,10 +1,10 @@
-import clsx from "clsx";
 import React, { ReactElement } from "react";
-import { useAppSelector } from "../../../../hooks/redux";
-import { Product } from "../../../../types";
-import AverageRating from "./AverageRating";
+import clsx from "clsx";
 
+import AverageRating from "./AverageRating";
 import styles from "./ProductCard.module.scss";
+import { Product } from "../../../../types";
+import { useAppSelector } from "../../../../hooks/redux";
 
 const ProductCard = ({
   attributes,

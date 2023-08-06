@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
-import { setPaginationNumber } from "../../../../redux/actions";
 
 import styles from "./PaginationAndResults.module.scss";
+import { setPaginationNumber } from "../../../../redux/actions";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 
 const PaginationAndResults = (): ReactElement => {
   const paginationFrom = useAppSelector((state) => state.data.pagination.from);

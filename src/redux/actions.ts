@@ -1,5 +1,5 @@
 import { Dispatch } from "@reduxjs/toolkit";
-import { FilterOption, Pagination, SelectedFilters } from "../types";
+import { Pagination, SelectedFilters } from "../types";
 import { RootState } from "../store";
 
 import types from "./types";

@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 
 import Categories from "./components/Categories";
 import Filters from "./components/Filters";
+import Modal from "./components/Modal";
 import Products from "./components/Products";
 import styles from "./App.module.scss";
+import { SelectedFilters } from "./types";
 import { callAPI } from "./helpers/callAPI";
-import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import { setFacets, setPagination, setProducts } from "./redux/actions";
-import { FilterOption, SelectedFilters } from "./types";
-import Modal from "./components/Modal";
+import { useAppDispatch, useAppSelector } from "./hooks/redux";
 
-const App = () => {
+const App = (): ReactElement => {
   const [filterModalIsOpen, setFilterModalIsOpen] = useState(false);
 
   const category = useAppSelector((state) => state.data.category);

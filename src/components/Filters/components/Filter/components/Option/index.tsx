@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 import styles from "./Option.module.scss";
 import { FilterOption } from "../../../../../../types";
@@ -15,7 +15,7 @@ const Option = ({
   onChange,
   productCount,
   value,
-}: Props) => {
+}: Props): ReactElement => {
   const handleChange = () => {
     onChange({
       displayValue,

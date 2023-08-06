@@ -1,13 +1,12 @@
+import React, { ReactElement, useMemo } from "react";
 import clsx from "clsx";
-import React, { ChangeEvent, ReactElement, useMemo } from "react";
-import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import { setSortType } from "../../redux/actions";
-import { Product } from "../../types";
+
 import PaginationAndResults from "./components/PaginationAndResults";
 import ProductCard from "./components/ProductCard";
 import SortAndView from "./components/SortAndView";
-
 import styles from "./Products.module.scss";
+import { Product } from "../../types";
+import { useAppSelector } from "../../hooks/redux";
 
 const Products = (): ReactElement => {
   const products = useAppSelector<Array<Product>>(

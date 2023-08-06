@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 import styles from "./AverageRating.module.scss";
 
@@ -6,7 +6,7 @@ interface Props {
   averageRating: number;
 }
 
-const AverageRating = ({ averageRating }: Props) => {
+const AverageRating = ({ averageRating }: Props): ReactElement => {
   const stars = Array(5)
     .fill(null)
     .map((_, index) =>

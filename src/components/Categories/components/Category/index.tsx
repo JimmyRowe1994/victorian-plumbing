@@ -2,8 +2,8 @@ import React, { ReactElement } from "react";
 import clsx from "clsx";
 
 import styles from "./Category.module.scss";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 import { setCategory } from "../../../../redux/actions";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 
 interface Props {
   category: string;

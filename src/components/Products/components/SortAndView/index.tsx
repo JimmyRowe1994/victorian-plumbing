@@ -1,9 +1,9 @@
-import clsx from "clsx";
 import React, { ChangeEvent, ReactElement, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
-import { setProductView, setSortType } from "../../../../redux/actions";
+import clsx from "clsx";
 
 import styles from "./SortAndView.module.scss";
+import { setProductView, setSortType } from "../../../../redux/actions";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 
 const SortAndView = (): ReactElement => {
   const sortType = useAppSelector((state) => state.data.sortType);

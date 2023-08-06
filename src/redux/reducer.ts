@@ -1,7 +1,7 @@
 import { AnyAction } from "@reduxjs/toolkit";
-import { Facet, Pagination, SelectedFilters } from "../types";
 
 import types from "./types";
+import { Facet, Pagination, SelectedFilters } from "../types";
 
 interface InitialState {
     category: string;
